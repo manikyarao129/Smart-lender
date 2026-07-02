@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container py-5">
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+          <h2 class="fw-bold mb-3">Prediction Result</h2>
+          <div class="alert alert-{% if result.prediction == 'Approved' %}success{% else %}danger{% endif %}">
+            <h4 class="alert-heading">Loan {{ result.prediction }}</h4>
+            <p class="mb-0">Confidence: {{ result.confidence * 100 }}%</p>
+          </div>
+          <div class="row g-3 mt-2">
+            <div class="col-md-4">
+              <div class="card bg-light h-100">
+                <div class="card-body">
+                  <h6>Risk Level</h6>
+                  <p class="fw-bold">{{ result.risk }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card bg-light h-100">
+                <div class="card-body">
+                  <h6>Recommendation</h6>
+                  <p class="fw-bold">{{ result.recommendation }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body p-4">
+          <h5 class="fw-bold">Applicant Summary</h5>
+          <ul class="list-group list-group-flush">
+            {% for key, value in form_data.items() %}
+            <li class="list-group-item"><strong>{{ key }}</strong>: {{ value }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

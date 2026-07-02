@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container py-5">
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+          <h2 class="fw-bold mb-3">Contact Smart Lender</h2>
+          <p class="text-muted">Reach out for support, integration guidance, or partnership opportunities.</p>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4"></textarea>
+            </div>
+            <button class="btn btn-primary" type="button">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body p-4">
+          <h5 class="fw-bold">Support</h5>
+          <p><i class="fa-solid fa-envelope me-2"></i>support@smartlender.ai</p>
+          <p><i class="fa-solid fa-phone me-2"></i>+1 (555) 123-4567</p>
+          <p><i class="fa-solid fa-location-dot me-2"></i>New York, USA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

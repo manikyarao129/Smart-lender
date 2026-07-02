@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container py-5">
+  <h2 class="fw-bold mb-4">Admin Dashboard</h2>
+  <div class="card shadow-sm border-0">
+    <div class="card-body p-0">
+      <table class="table mb-0">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+            <th>Risk</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in predictions %}
+          <tr>
+            <td>{{ item.username }}</td>
+            <td>{{ item.prediction }}</td>
+            <td>{{ item.confidence }}</td>
+            <td>{{ item.risk }}</td>
+            <td>{{ item.created_at }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="5" class="text-center py-4">No prediction history present.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}

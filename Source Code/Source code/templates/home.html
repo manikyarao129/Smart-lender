@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero bg-gradient text-white py-5">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <h1 class="display-5 fw-bold">Smart lending for faster, safer decisions.</h1>
+        <p class="lead">Use AI-powered insights to evaluate loan eligibility with confidence and transparency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row g-4 mb-4">
+    <div class="col-lg-12">
+      <div class="card shadow-sm border-0 p-4">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold">Loan Prediction</h2>
+            <p class="text-muted mb-0">Check applicant eligibility instantly with Smart Lender’s AI-powered prediction tool.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg">Start</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+          <h5 class="card-title mt-3">Fast Evaluation</h5>
+          <p>Instant predictions powered by a trained machine learning model.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+          <h5 class="card-title mt-3">Secure Decisions</h5>
+          <p>Reduce risk with confidence scores and transparent recommendations.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+          <h5 class="card-title mt-3">Actionable Insights</h5>
+          <p>Track outcomes and review past decisions in your dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

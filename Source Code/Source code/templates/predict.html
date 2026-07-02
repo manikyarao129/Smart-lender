@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container py-5">
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+          <h2 class="fw-bold mb-3">Loan Prediction Form</h2>
+          <form method="post">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Gender</label>
+                <select class="form-select" name="Gender">
+                  <option value="Male" {% if form_data.get('Gender') == 'Male' %}selected{% endif %}>Male</option>
+                  <option value="Female" {% if form_data.get('Gender') == 'Female' %}selected{% endif %}>Female</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Married</label>
+                <select class="form-select" name="Married">
+                  <option value="Yes" {% if form_data.get('Married') == 'Yes' %}selected{% endif %}>Yes</option>
+                  <option value="No" {% if form_data.get('Married') == 'No' %}selected{% endif %}>No</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Dependents</label>
+                <select class="form-select" name="Dependents">
+                  <option value="0" {% if form_data.get('Dependents') == '0' %}selected{% endif %}>0</option>
+                  <option value="1" {% if form_data.get('Dependents') == '1' %}selected{% endif %}>1</option>
+                  <option value="2" {% if form_data.get('Dependents') == '2' %}selected{% endif %}>2</option>
+                  <option value="3+" {% if form_data.get('Dependents') == '3+' %}selected{% endif %}>3+</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Education</label>
+                <select class="form-select" name="Education">
+                  <option value="Graduate" {% if form_data.get('Education') == 'Graduate' %}selected{% endif %}>Graduate</option>
+                  <option value="Not Graduate" {% if form_data.get('Education') == 'Not Graduate' %}selected{% endif %}>Not Graduate</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Self Employed</label>
+                <select class="form-select" name="Self_Employed">
+                  <option value="No" {% if form_data.get('Self_Employed') == 'No' %}selected{% endif %}>No</option>
+                  <option value="Yes" {% if form_data.get('Self_Employed') == 'Yes' %}selected{% endif %}>Yes</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Applicant Income</label>
+                <input class="form-control" type="number" name="ApplicantIncome" value="{{ form_data.get('ApplicantIncome', '') }}" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Co-applicant Income</label>
+                <input class="form-control" type="number" name="CoapplicantIncome" value="{{ form_data.get('CoapplicantIncome', '') }}" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Loan Amount</label>
+                <input class="form-control" type="number" name="LoanAmount" value="{{ form_data.get('LoanAmount', '') }}" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Loan Amount Term</label>
+                <input class="form-control" type="number" name="Loan_Amount_Term" value="{{ form_data.get('Loan_Amount_Term', '') }}" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Credit History</label>
+                <select class="form-select" name="Credit_History">
+                  <option value="1" {% if form_data.get('Credit_History') == '1' %}selected{% endif %}>1</option>
+                  <option value="0" {% if form_data.get('Credit_History') == '0' %}selected{% endif %}>0</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Property Area</label>
+                <select class="form-select" name="Property_Area">
+                  <option value="Urban" {% if form_data.get('Property_Area') == 'Urban' %}selected{% endif %}>Urban</option>
+                  <option value="Semiurban" {% if form_data.get('Property_Area') == 'Semiurban' %}selected{% endif %}>Semiurban</option>
+                  <option value="Rural" {% if form_data.get('Property_Area') == 'Rural' %}selected{% endif %}>Rural</option>
+                </select>
+              </div>
+            </div>
+            <div class="mt-4 d-flex gap-2">
+              <button class="btn btn-primary" type="submit">Predict</button>
+              <button class="btn btn-outline-secondary" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body p-4">
+          <h5 class="fw-bold">How it works</h5>
+          <p class="text-muted">Submit the applicant profile and the model will estimate whether the application should be approved or rejected.</p>
+          <ul>
+            <li>Quick validation</li>
+            <li>Instant prediction</li>
+            <li>Risk and recommendation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
