@@ -159,4 +159,4 @@ This project is licensed under the MIT License.
 
 ## Author
 
-Developed as the **Smart Lender** project.
+Ch Manikya rao
